@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import { deleteTodo, updateTodo } from "../utils/HandleApi";
 const TodoListItem = (props) => {
   return (
     <Stack
@@ -22,17 +21,13 @@ const TodoListItem = (props) => {
       }}
     >
       <ListItem>
-        <ListItemText primary={props.todo} />
+        <ListItemText primary={props.text} />
         <ListItemSecondaryAction>
           <IconButton edge="end" aria-label="delete">
-            <DeleteIcon
-              onClick={() => {
-                deleteTodo(props._id, props.setTodo);
-              }}
-            />
+            <DeleteIcon onClick={props.deleteMode} />
           </IconButton>
           <IconButton edge="end" aria-label="edit">
-            <EditIcon />
+            <EditIcon onClick={props.updateMode} />
           </IconButton>
         </ListItemSecondaryAction>
       </ListItem>

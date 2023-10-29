@@ -13,4 +13,4 @@ mongoose
 app.use(express.json());
 app.use(cors());
 app.use(todoRoute);
-app.listen(PORT, () => `Server started on PORT:${PORT}`);
+app.listen(PORT, () => console.log(`Server started on PORT:${PORT}`));
