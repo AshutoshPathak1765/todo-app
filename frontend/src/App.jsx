@@ -3,7 +3,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import TodoListItem from "./components/TodoListItem";
 import { addTodo, getAllTodo, updateTodo, deleteTodo } from "./utils/HandleApi";
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button, Stack, TextField } from "@mui/material";
 
 function App() {
   const [todo, setTodo] = useState([]);
@@ -64,6 +64,7 @@ function App() {
           {isUpdating ? "Update Todo" : "Add Todo"}
         </Button>
       </Box>
+      <Stack spacing={3} padding="15px" width="100%" justifyItems="center" alignItems="center">
       {todo.map((item) => (
         <TodoListItem
           updateMode={() => updateMode(item._id, item.text)}
@@ -71,7 +72,9 @@ function App() {
           text={item.text}
           key={item._id}
         />
+        
       ))}
+      </Stack>
     </>
   );
 }

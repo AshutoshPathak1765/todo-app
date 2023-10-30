@@ -14,13 +14,12 @@ const TodoListItem = (props) => {
     <Stack
       sx={{
         listStyle: "none",
-        width: "50%",
-        padding: "10px",
-        margin: "20px auto",
+        width: "60%",
+        padding: "15px",
         boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
       }}
     >
-      <ListItem>
+      <ListItem sx={{display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap"}}>
         <ListItemText primary={props.text} />
         <ListItemSecondaryAction>
           <IconButton edge="end" aria-label="delete">

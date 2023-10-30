@@ -36,7 +36,12 @@ const updateTodo = (_id, text, setInputValue, setisUpdating, setTodo) => {
 
 const deleteTodo = (_id, setTodo) => {
   axios
-    .delete(`${baseURL}/remove`, { _id })
+    .delete(`${baseURL}/remove`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: JSON.stringify({ _id }),
+    })
     .then((data) => {
       console.log(_id);
       getAllTodo(setTodo);
